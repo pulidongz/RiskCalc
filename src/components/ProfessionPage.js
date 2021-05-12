@@ -66,22 +66,17 @@ const useStyles = makeStyles({
 
 export default function ProfessionPage(props){
     const classes = useStyles();
-    const [user, setUser] = useState("");
+    const { user, setUser, selectUserType } = props;
     const [value, setValue] = useState("home");
     const [body, setBody] = useState(<Content app_key={value} />);
 
-    console.log(props);
+    console.log(JSON.stringify(props));
 
-    const handleChangeBodyContent = (app_module) => {
-        const content = <Content app_key={app_module} />;
-        setValue(app_module);
-        setBody(content);
-    };
     return(
         <Grid className={classes.root} container direction="row" justify="center" alignItems="center" spacing={2}>
             <Grid item xs={6}>
             <Card className={classes.paper}>
-                <CardActionArea onClick={()=>{handleChangeBodyContent("owner")}}>
+                <CardActionArea onClick={()=>{selectUserType("owner")}}>
                     <CardMedia
                     className={classes.media}
                     image={owner}
@@ -101,7 +96,7 @@ export default function ProfessionPage(props){
 
             <Grid item xs={6}>
                 <Card className={classes.paper}>
-                    <CardActionArea onClick={()=>{handleChangeBodyContent(contractor)}}>
+                    <CardActionArea onClick={()=>{selectUserType("contractor")}}>
                         <CardMedia
                         className={classes.media}
                         image={contractor}

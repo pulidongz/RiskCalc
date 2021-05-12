@@ -47,12 +47,13 @@ const useStyles = makeStyles({
 
 export default function CriteriaPage(props){
     const classes = useStyles();
-    console.log(props);
+    const {criteria, setCriteria, selectCriteriaType} = props;
+    console.log(JSON.stringify(props));
     return(
         <Grid container direction="row" justify="center" alignItems="center" spacing={2}>
             <Grid item xs={6}>
             <Card className={classes.paper}>
-                <CardActionArea>
+                <CardActionArea onClick={()=>{selectCriteriaType("construction_delay")}}>
                     <CardMedia
                     className={classes.media}
                     image={cons_delay}
@@ -67,22 +68,13 @@ export default function CriteriaPage(props){
                     </Typography>
                     </CardContent>
                 </CardActionArea>
-                <CardActions>
-                <Button size="small" color="primary"
-									onClick={() => {
-										
-									}}
-								>
-                  Select
-                </Button>
-                </CardActions>
                 </Card>
             </Grid>
 
             <Grid item xs={6}>
                 
             <Card className={classes.paper}>
-                <CardActionArea>
+                <CardActionArea onClick={()=>{selectCriteriaType("workmanship_defects")}}>
                     <CardMedia
                     className={classes.media}
                     image={workman_defects}
@@ -97,11 +89,6 @@ export default function CriteriaPage(props){
                     </Typography>
                     </CardContent>
                 </CardActionArea>
-                <CardActions>
-                    <Button size="small" color="primary">
-                    Select
-                    </Button>
-                </CardActions>
                 </Card>
 
             </Grid>

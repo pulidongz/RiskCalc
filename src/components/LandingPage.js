@@ -27,39 +27,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import owner from "../assets/images/owner.jpg";
 import contractor from "../assets/images/contractor.jpg";
 
-function handleContent(app_key) {
-	let return_feat = [];
-    const lookup_obj = {
-        profPage: <ProfessionPage />,
-        criteriaOwner: <CriteriaPage />,
-        workmanDefects: <WorkmanDefects />,
-        constDelays: <ConstDelays />,
-        resultPage: <ResultPage />,
-
-
-			// switch (app_key) {
-			// 	case "criteria":
-			// 		return_feat = [<CriteriaPage />];
-			// 		break
-			// 	case "workmanship_defects":
-			// 		return_feat = [<WorkmanDefects />];
-			// 		break
-			// 	case "construction_delays":
-			// 		return_feat = [<ConstDelays />];
-			// 		break
-			// 	case "result":
-			// 		return_feat = [<WorkmanDefects />];
-			// 		break
-			// 	default:
-			// 		break
-			// }
-    };
-    return lookup_obj[app_key];
-}
-
-function Content({ app_key }) {
-    return <React.Fragment>{handleContent(app_key)}</React.Fragment>;
-}
 
 function getSteps() {
 	return ['Select your profession',
@@ -92,68 +59,66 @@ const useStyles = makeStyles({
   });
 
 export default function LandingPage(props){
-    const classes = useStyles();
+  const classes = useStyles();
 
 	const [activeStep, setActiveStep] = React.useState(0);
-  	const steps = getSteps();
+	const steps = getSteps();
+	const [user, setUser] = useState("");
+	const [criteria, setCriteria] = useState("");
+	const [val1, setVal1] = useState(0);
+	const [val2, setVal2] = useState(0);
+	const [val3, setVal3] = useState(0);
+	const [val4, setVal4] = useState(0);
+	const [val5, setVal5] = useState(0);
+	const [val6, setVal6] = useState(0);
+	const [val7, setVal7] = useState(0);
+	const [val8, setVal8] = useState(0);
 
-    const [user, setUser] = useState("");
-    const [appKey, setAppKey] = useState("profPage");
-    const [body, setBody] = useState(<ProfessionPage />);
 
 	const getStepContent = (step) => {
 		switch (step) {
 			case 0:
-				return <ProfessionPage/>;
+				return <ProfessionPage user={user} setUser={setUser} selectUserType={selectUserType} />;
 			case 1:
-				return <CriteriaPage user={user}/>;
+				return <CriteriaPage criteria={criteria} setCriteria={setCriteria} selectCriteriaType={selectCriteriaType} />;
 			case 2:
-				return <WorkmanDefects {...props}/>;
+				if(criteria === "construction_delay"){
+					return <ConstDelays val1={val1} val2={val2} val3={val3} val4={val4} val5={val5} val6={val6} val7={val7} val8={val8}
+						setVal1={setVal1} setVal2={setVal2} setVal3={setVal3} setVal4={setVal4} setVal5={setVal5} setVal6={setVal6} setVal7={setVal7} setVal8={setVal8} 
+					/>;
+				}else{
+					return <WorkmanDefects val1={val1} val2={val2} val3={val3} val4={val4} val5={val5} val6={val6} val7={val7} val8={val8}
+						setVal1={setVal1} setVal2={setVal2} setVal3={setVal3} setVal4={setVal4} setVal5={setVal5} setVal6={setVal6} setVal7={setVal7} setVal8={setVal8} 
+					/>;
+				}
 			case 3:
-				return <ResultPage {...props}/>;
+				return <ResultPage user={user} criteria={criteria} />;
 			default:
 				return 'Unknown step';
 		}
 	};
 
-    const handleChangeBodyContent = (user, app_key) => {
-			setActiveStep((prevActiveStep) => prevActiveStep + 1);
-			setUser(user);
-			setAppKey(app_key);
+	const selectUserType = (user) => {
+		setUser(user);
+		handleNext();
+	}
 
-			let return_feat = [];
-			switch (app_key) {
-				case "criteria":
-					return_feat = [<CriteriaPage user={user}/>];
-					break
-				case "workmanship_defects":
-					return_feat = [<WorkmanDefects {...props}/>];
-					break
-				case "construction_delays":
-					return_feat = [<ConstDelays {...props}/>];
-					break
-				case "result":
-					return_feat = [<WorkmanDefects {...props}/>];
-					break
-				default:
-					return_feat = [<ProfessionPage {...props}/>];
-					break
-			}
-			alert(JSON.stringify(return_feat));
-			setBody(return_feat);
-    };
+	const selectCriteriaType = (criteria) => {
+		setCriteria(criteria);
+		handleNext();
+	}
 
-		const handleNext = () => {
-			setActiveStep((prevActiveStep) => prevActiveStep + 1);
-		};
-	
-		const handleBack = () => {
-			setActiveStep((prevActiveStep) => prevActiveStep - 1);
-		};
-	
-		const handleReset = () => {
-			setActiveStep(0);
-		};
+	const handleNext = () => {
+		setActiveStep((prevActiveStep) => prevActiveStep + 1);
+	};
+
+	const handleBack = () => {
+		setActiveStep((prevActiveStep) => prevActiveStep - 1);
+	};
+
+	const handleReset = () => {
+		setActiveStep(0);
+	};
 
     return(
         <Grid className={classes.root} container direction="row" justify="center" alignItems="center" spacing={2}>
