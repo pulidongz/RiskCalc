@@ -1,50 +1,19 @@
-import React, { useEffect, useState, useRef } from "react";
-import { Link } from 'react-router-dom';
+import React from "react";
 import {
-    Avatar,
-    Box,
-    Button,
-    CssBaseline,
     Card,
     CardActionArea,
-    CardActions,
     CardContent,
     CardMedia,
-    Container,
-    Image,
     Grid,
-    Paper,
-    Snackbar,
-    TextField,
     Typography,
 } from "@material-ui/core";
 
 import owner from "../assets/images/owner.jpg"
 import contractor from "../assets/images/contractor.jpg"
 
-import CriteriaPage from './CriteriaPage';
-import ConstDelays from './ConstDelays';
-import WorkmanDefects from './WorkmanDefects';
-import ResultPage from './ResultPage';
-
-
 // import { useCookies } from "react-cookie";
 
 import { makeStyles } from "@material-ui/core/styles";
-
-
-function handleContent(app_key) {
-    const lookup_obj = {
-        workmanDefects: <WorkmanDefects />,
-        constDelays: <ConstDelays />,
-    };
-    return lookup_obj[app_key];
-}
-
-function Content({ app_key }) {
-    return <React.Fragment>{handleContent(app_key)}</React.Fragment>;
-}
-
 
 const useStyles = makeStyles({
     root:{
@@ -67,8 +36,6 @@ const useStyles = makeStyles({
 export default function ProfessionPage(props){
     const classes = useStyles();
     const { user, setUser, selectUserType } = props;
-    const [value, setValue] = useState("home");
-    const [body, setBody] = useState(<Content app_key={value} />);
 
     console.log(JSON.stringify(props));
 

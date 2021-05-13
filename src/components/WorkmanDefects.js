@@ -1,30 +1,10 @@
-import React, { useEffect, useState, useRef } from "react";
+import React from "react";
 import {
-    Avatar,
-    Box,
-    Button,
-    CssBaseline,
-    Card,
-    CardActionArea,
-    CardActions,
-    CardContent,
-    CardMedia,
-    Container,
-    Image,
     Grid,
     Slider,
     Paper,
     Typography,
-    FormControl,
-    FormControlLabel,
-    FormLabel,
-    Radio,
-    RadioGroup,
-
 } from "@material-ui/core";
-
-import cons_delay from "../assets/images/cons_delay.jpg"
-import workman_defects from "../assets/images/workman_defects.jpg"
 
 // import { useCookies } from "react-cookie";
 
@@ -123,9 +103,7 @@ export default function WorkmanDefects(props){
 										min={1}
 										max={5}
 										marks={marks}
-										//value={val1}
-                    onChange={(e, v)=> setVal1(v)}
-
+                    onChange={setVal1}
 								/>
 							</Grid>
 
@@ -145,7 +123,7 @@ export default function WorkmanDefects(props){
 										min={1}
 										max={5}
 										marks={marks}
-                    value={val2}
+                    
                     onChange={setVal2}
 								/>
 							</Grid>
@@ -166,7 +144,7 @@ export default function WorkmanDefects(props){
 										min={1}
 										max={5}
 										marks={marks}
-                    value={val3}
+                    
                     onChange={setVal3}
 								/>
 							</Grid>
@@ -187,7 +165,7 @@ export default function WorkmanDefects(props){
 										min={1}
 										max={5}
 										marks={marks}
-                    value={val4}
+                    
                     onChange={setVal4}
 								/>
 							</Grid>
@@ -208,7 +186,7 @@ export default function WorkmanDefects(props){
 										min={1}
 										max={5}
 										marks={marks}
-                    value={val5}
+                    
                     onChange={setVal5}
 								/>
 							</Grid>
@@ -228,7 +206,7 @@ export default function WorkmanDefects(props){
 										marks
 										min={1}
 										max={5}
-										value={val6}
+										
                     onChange={setVal6}
 								/>
 							</Grid>
@@ -249,7 +227,7 @@ export default function WorkmanDefects(props){
 										min={1}
 										max={5}
 										marks={marks}
-                    value={val7}
+                    
                     onChange={setVal7}
 								/>
 							</Grid>
@@ -270,7 +248,7 @@ export default function WorkmanDefects(props){
 										min={1}
 										max={5}
 										marks={marks}
-                    value={val8}
+                    
                     onChange={setVal8}
 								/>
 							</Grid>

@@ -4,16 +4,7 @@ import {
     Slider,
     Paper,
     Typography,
-    FormControl,
-    FormControlLabel,
-    FormLabel,
-    Radio,
-    RadioGroup,
-
 } from "@material-ui/core";
-
-import cons_delay from "../assets/images/cons_delay.jpg"
-import workman_defects from "../assets/images/workman_defects.jpg"
 
 // import { useCookies } from "react-cookie";
 

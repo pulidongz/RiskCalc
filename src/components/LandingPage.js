@@ -5,7 +5,6 @@ import {
 		Stepper,
 		Step,
 		StepLabel,
-		StepContent,
 		Typography,
 		Button,
 		Card,
@@ -24,17 +23,12 @@ import ResultPage from './ResultPage';
 
 import { makeStyles } from "@material-ui/core/styles";
 
-import owner from "../assets/images/owner.jpg";
-import contractor from "../assets/images/contractor.jpg";
-
-
 function getSteps() {
 	return ['Select your profession',
 					'Choose criteria',
 					'Answer questionnaire',
 					'Result'];
 }
-
 
 const useStyles = makeStyles({
     root:{
@@ -92,7 +86,7 @@ export default function LandingPage(props){
 					/>;
 				}
 			case 3:
-				return <ResultPage user={user} criteria={criteria} />;
+				return <ResultPage user={user} criteria={criteria} val1={val1} val2={val2} val3={val3} val4={val4} val5={val5} val6={val6} val7={val7} val8={val8} />;
 			default:
 				return 'Unknown step';
 		}
