@@ -59,14 +59,14 @@ export default function LandingPage(props){
 	const steps = getSteps();
 	const [user, setUser] = useState("");
 	const [criteria, setCriteria] = useState("");
-	const [val1, setVal1] = useState(0);
-	const [val2, setVal2] = useState(0);
-	const [val3, setVal3] = useState(0);
-	const [val4, setVal4] = useState(0);
-	const [val5, setVal5] = useState(0);
-	const [val6, setVal6] = useState(0);
-	const [val7, setVal7] = useState(0);
-	const [val8, setVal8] = useState(0);
+	const [val1, setVal1] = useState(1);
+	const [val2, setVal2] = useState(1);
+	const [val3, setVal3] = useState(1);
+	const [val4, setVal4] = useState(1);
+	const [val5, setVal5] = useState(1);
+	const [val6, setVal6] = useState(1);
+	const [val7, setVal7] = useState(1);
+	const [val8, setVal8] = useState(1);
 
 
 	const getStepContent = (step) => {
@@ -112,6 +112,16 @@ export default function LandingPage(props){
 
 	const handleReset = () => {
 		setActiveStep(0);
+		setUser("");
+		setCriteria("");
+		setVal1("");
+		setVal2("");
+		setVal3("");
+		setVal4("");
+		setVal5("");
+		setVal6("");
+		setVal7("");
+		setVal8("");
 	};
 
     return(
@@ -134,27 +144,29 @@ export default function LandingPage(props){
 					{getStepContent(activeStep)}
 
 					{/* BUTTON GROUP */}
-					<Grid item xs={12}>
-						{activeStep === steps.length ? (
-						<div>
-							<Button onClick={handleReset}>Try Again</Button>
-						</div>
-					) : (
-						<div>
-							<Button
-								disabled={activeStep === 0}
-								onClick={handleBack}
-								className={classes.backButton}
-							>
-								Back
-							</Button>
-							<Button variant="con
-							tained" color="primary" onClick={handleNext}>
-								{activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-							</Button>
-						</div>
-					)}
+					<Grid container direction="row" justify="space-between" alignItems="flex-start" style={{paddingTop: 5}}>
+							{activeStep === steps.length ? (
+							<Grid item xs={3}>
+								<Button onClick={handleReset}>Try Again</Button>
+							</Grid>
+						) : (
+							<React.Fragment>
+								<Grid item xs={3}>
+									<Button variant="contained" disabled={activeStep === 0} onClick={handleBack} className={classes.backButton}>
+										Back
+									</Button>
+								</Grid>
+								<Grid item xs={3}>
+									<Button variant="contained" color="primary" onClick={handleNext} style={{display: criteria ? 'block' : 'none'}}>
+										{activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+									</Button>
+								</Grid>
+							</React.Fragment>
+						)}
+						
 					</Grid>
+
+					
         </Grid>
     );
 }

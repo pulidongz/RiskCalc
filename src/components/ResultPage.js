@@ -55,7 +55,7 @@ export default function ResultPage(props){
 		val6, setVal6,
 		val7, setVal7,
 		val8, setVal8, } = props;
-		alert(val1);
+		//alert(val1);
     return(
         <Grid>
             <Typography>{user} Side - {criteria}</Typography>

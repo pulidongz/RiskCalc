@@ -80,7 +80,7 @@ export default function WorkmanDefects(props){
 					<Paper>
             <Grid item xs={12}>
             <Typography variant="h6" gutterBottom>
-                Workman Defects
+                Workmanship Defects
             </Typography>
             <Typography variant="body2" gutterBottom>
                 Select probability of the following cases (1 being least probable):
@@ -103,6 +103,7 @@ export default function WorkmanDefects(props){
 										min={1}
 										max={5}
 										marks={marks}
+										value={val1}
                     onChange={setVal1}
 								/>
 							</Grid>
@@ -123,7 +124,7 @@ export default function WorkmanDefects(props){
 										min={1}
 										max={5}
 										marks={marks}
-                    
+                    value={val2}
                     onChange={setVal2}
 								/>
 							</Grid>
@@ -144,7 +145,7 @@ export default function WorkmanDefects(props){
 										min={1}
 										max={5}
 										marks={marks}
-                    
+                    value={val3}
                     onChange={setVal3}
 								/>
 							</Grid>
@@ -165,7 +166,7 @@ export default function WorkmanDefects(props){
 										min={1}
 										max={5}
 										marks={marks}
-                    
+                    value={val4}
                     onChange={setVal4}
 								/>
 							</Grid>
@@ -186,7 +187,7 @@ export default function WorkmanDefects(props){
 										min={1}
 										max={5}
 										marks={marks}
-                    
+                    value={val5}
                     onChange={setVal5}
 								/>
 							</Grid>
@@ -206,7 +207,7 @@ export default function WorkmanDefects(props){
 										marks
 										min={1}
 										max={5}
-										
+										value={val6}
                     onChange={setVal6}
 								/>
 							</Grid>
@@ -227,7 +228,7 @@ export default function WorkmanDefects(props){
 										min={1}
 										max={5}
 										marks={marks}
-                    
+                    value={val7}
                     onChange={setVal7}
 								/>
 							</Grid>
@@ -248,7 +249,7 @@ export default function WorkmanDefects(props){
 										min={1}
 										max={5}
 										marks={marks}
-                    
+                    value={val8}
                     onChange={setVal8}
 								/>
 							</Grid>

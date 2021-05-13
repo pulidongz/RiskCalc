@@ -103,7 +103,7 @@ export default function ConstDelays(props){
 										min={1}
 										max={5}
 										marks={marks}
-                    value={val1}
+                    //value={val1}
                     onChange={setVal1}
 								/>
 							</Grid>
@@ -124,7 +124,7 @@ export default function ConstDelays(props){
 										min={1}
 										max={5}
 										marks={marks}
-                    value={val2}
+                    //value={val2}
                     onChange={setVal2}
 								/>
 							</Grid>
@@ -145,7 +145,7 @@ export default function ConstDelays(props){
 										min={1}
 										max={5}
 										marks={marks}
-                    value={val3}
+                    //value={val3}
                     onChange={setVal3}
 								/>
 							</Grid>
@@ -166,7 +166,7 @@ export default function ConstDelays(props){
 										min={1}
 										max={5}
 										marks={marks}
-                    value={val4}
+                    //value={val4}
                     onChange={setVal4}
 								/>
 							</Grid>
@@ -187,7 +187,7 @@ export default function ConstDelays(props){
 										min={1}
 										max={5}
 										marks={marks}
-                    value={val5}
+                    //value={val5}
                     onChange={setVal5}
 								/>
 							</Grid>
@@ -208,7 +208,7 @@ export default function ConstDelays(props){
 										min={1}
 										max={5}
 										marks={marks}
-                    value={val6}
+                    //value={val6}
                     onChange={setVal6}
 								/>
 							</Grid>
@@ -229,7 +229,7 @@ export default function ConstDelays(props){
 										min={1}
 										max={5}
 										marks={marks}
-                    value={val7}
+                    //value={val7}
                     onChange={setVal7}
 								/>
 							</Grid>
@@ -250,7 +250,7 @@ export default function ConstDelays(props){
 										min={1}
 										max={5}
 										marks={marks}
-                    value={val8}
+                    //value={val8}
                     onChange={setVal8}
 								/>
 							</Grid>
