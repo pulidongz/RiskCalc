@@ -26,8 +26,8 @@ import { makeStyles } from "@material-ui/core/styles";
 function getSteps() {
 	return ['Select your profession',
 					'Choose criteria',
-					'Answer questionnaire',
-					'Result'];
+					'Answer the questionnaire',
+					'View result'];
 }
 
 const useStyles = makeStyles({
@@ -78,7 +78,8 @@ export default function LandingPage(props){
 			case 2:
 				if(criteria === "construction_delay"){
 					return <ConstDelays val1={val1} val2={val2} val3={val3} val4={val4} val5={val5} val6={val6} val7={val7} val8={val8}
-						setVal1={setVal1} setVal2={setVal2} setVal3={setVal3} setVal4={setVal4} setVal5={setVal5} setVal6={setVal6} setVal7={setVal7} setVal8={setVal8} 
+						setVal1={setVal1} setVal2={setVal2} setVal3={setVal3} setVal4={setVal4} setVal5={setVal5} setVal6={setVal6} setVal7={setVal7} setVal8={setVal8}
+						handleNextMainContent={handleNext}
 					/>;
 				}else{
 					return <WorkmanDefects val1={val1} val2={val2} val3={val3} val4={val4} val5={val5} val6={val6} val7={val7} val8={val8}
@@ -126,7 +127,7 @@ export default function LandingPage(props){
 
     return(
         <Grid className={classes.root} container direction="row" justify="center" alignItems="center" spacing={2}>
-			<Typography variant="h6" gutterBottom>Construction Duration and Workmanship Calculator</Typography>
+			<Typography variant="h5" gutterBottom>Construction Duration and Workmanship Calculator</Typography>
 			<Typography variant="subtitle2" gutterBottom>For mass housing developments</Typography>
 
 					{/* STEPPER COMPONENT */}
