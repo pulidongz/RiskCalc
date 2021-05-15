@@ -42,7 +42,7 @@ export default function CriteriaPage(props){
         <Grid container direction="row" justify="center" alignItems="center" spacing={2}>
             <Grid item xs={6}>
             <Card className={classes.paper}>
-                <CardActionArea onClick={()=>{selectCriteriaType("construction_delay")}}>
+                <CardActionArea onClick={()=>{selectCriteriaType("Construction Delay")}}>
                     <CardMedia
                     className={classes.media}
                     image={cons_delay}
@@ -63,7 +63,7 @@ export default function CriteriaPage(props){
             <Grid item xs={6}>
                 
             <Card className={classes.paper}>
-                <CardActionArea onClick={()=>{selectCriteriaType("workmanship_defects")}}>
+                <CardActionArea onClick={()=>{selectCriteriaType("Workmanship Defects")}}>
                     <CardMedia
                     className={classes.media}
                     image={workman_defects}

@@ -57,9 +57,13 @@ export default function ResultPage(props){
 		val8, setVal8, } = props;
 		//alert(val1);
     return(
-        <Grid>
-            <Typography>{user} Side - {criteria}</Typography>
-						<Typography>{val1} {val2} {val3} {val4} {val5} {val6} {val7} {val8}</Typography>
+			<Paper elevation={3} style={{height: 300}}>
+				<Grid className={classes.root} container direction="row" justify="center" alignItems="center" spacing={2}>
+					<Grid item xs={12}>
+						<Typography variant="h6" gutterBottom>{user} Side: {criteria}</Typography>
+						<Typography>{val1} {val2} {val3} {val4} {val5} {val6} {val7} {val8} is the most probable {criteria === "Construction Delay" ? "rate of delay for your project" : "degree of workmanship defects you will encounter in your project"}</Typography>
+					</Grid>
         </Grid>
+			</Paper>
     );
 }

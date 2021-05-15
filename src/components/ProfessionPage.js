@@ -43,7 +43,7 @@ export default function ProfessionPage(props){
         <Grid className={classes.root} container direction="row" justify="center" alignItems="center" spacing={2}>
             <Grid item xs={6}>
             <Card className={classes.paper}>
-                <CardActionArea onClick={()=>{selectUserType("owner")}}>
+                <CardActionArea onClick={()=>{selectUserType("Owner")}}>
                     <CardMedia
                     className={classes.media}
                     image={owner}
@@ -63,7 +63,7 @@ export default function ProfessionPage(props){
 
             <Grid item xs={6}>
                 <Card className={classes.paper}>
-                    <CardActionArea onClick={()=>{selectUserType("contractor")}}>
+                    <CardActionArea onClick={()=>{selectUserType("Contractor")}}>
                         <CardMedia
                         className={classes.media}
                         image={contractor}
