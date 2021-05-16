@@ -4,14 +4,15 @@ import {
     Paper,
     Typography,
 } from "@material-ui/core";
-
 import { makeStyles } from "@material-ui/core/styles";
 
+import cdos from "./formulas/cdos";
+import cdcs from "./formulas/cdcs";
 
 const useStyles = makeStyles({
 	root:{
 	maxWidth: 600,
-			paddingTop: 10,
+			padding: 20,
 			display: 'flex',
 			margin: 'auto',
 			flexWrap: 'wrap',
@@ -46,7 +47,7 @@ export default function ResultPage(props){
 		val6, setVal6,
 		val7, setVal7,
 		val8, setVal8, } = props;
-		const [constdelayos, setConstdelayos] = useState(null);
+		const [getResult, setGetResult] = useState(null);
 		
 		// Construction Delay, Owner Side
 		// <cdos val1={val1} val2={val2} val3={val3} val4={val4} val5={val5} val6={val6} val7={val7} val8={val8} />;
@@ -59,7 +60,8 @@ export default function ResultPage(props){
 		// const wdcs = <cdos val1={val1} val2={val2} val3={val3} val4={val4} val5={val5} val6={val6} val7={val7} val8={val8} />;
 		
 		useEffect(() => {
-			setConstdelayos(computeCDOS());
+			//setConstdelayos(computeCDOS());
+			setGetResult(cdos(val1, val2, val3, val4, val5, val6, val7, val8));
 		}, []); 
 
 		const computeCDOS = () => {
@@ -140,7 +142,7 @@ export default function ResultPage(props){
 					</Grid>
 					<Grid container direction="column" justify="flex-start" alignItems="center">
 						<Grid item xs={12}>
-						<Typography variant="h4" gutterBottom>{constdelayos}</Typography>
+						<Typography variant="h4" gutterBottom>{getResult}</Typography>
 						</Grid>
 						<Grid item xs={12}>
 							<Typography>is the most probable {criteria === "Construction Delay" ? "rate of delay for your project" : "degree of workmanship defects you will encounter in your project."}</Typography>

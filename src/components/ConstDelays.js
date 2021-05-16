@@ -20,7 +20,7 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles({
     root:{
 		maxWidth: 600,
-        padding: 10,
+        padding: 20,
         display: 'flex',
         margin: 'auto',
         flexWrap: 'wrap',
@@ -106,6 +106,7 @@ export default function ConstDelays(props){
     const classes = useStyles();
 		const [activeStep, setActiveStep] = React.useState(1);
     const { 
+		user, criteria,
 		val1, setVal1,
 		val2, setVal2,
 		val3, setVal3,
@@ -113,8 +114,7 @@ export default function ConstDelays(props){
 		val5, setVal5,
 		val6, setVal6,
 		val7, setVal7,
-		val8, setVal8,
-		handleNextMainContent, } = props;
+		val8, setVal8 } = props;
 
 		const handleNext = () => {
 			setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -129,7 +129,7 @@ export default function ConstDelays(props){
         <Grid className={classes.root} container direction="row" justify="center" alignItems="center" spacing={2}>
 					<Grid item xs={12}>
             <Typography variant="h6" gutterBottom>
-                Construction Delays
+							{user} Side: {criteria}
             </Typography>
             <Typography variant="body2" gutterBottom>
                 Select probability of the following cases (<strong>1</strong> being the <u>least</u> probable):
@@ -158,7 +158,7 @@ export default function ConstDelays(props){
 						{/* QUESTION 1 */}
 						<Grid container direction="row" justify="center" alignItems="center" spacing={1}>
 							<Grid item xs={7}>
-								<Typography variant="body2" gutterBottom>1. Owner Payment Processing Delays</Typography>
+								<Typography variant="body2" gutterBottom>1. {user === "Owner" ? "Owner Payment Processing Delays" : "Ineffective Project Planning and Supervision"}</Typography>
 							</Grid>
 							<Grid item xs={5}>
 								<FormControl component="Item1" fullWidth="true">
@@ -181,7 +181,7 @@ export default function ConstDelays(props){
 						{/* QUESTION 2 */}
 						<Grid container direction="row" justify="center" alignItems="center" spacing={1}>
 							<Grid item xs={7}>
-								<Typography variant="body2" gutterBottom>2. Owner Decision Making Delays</Typography>
+								<Typography variant="body2" gutterBottom>2. {user === "Owner" ? "Owner Decision Making Delays" : "Financial Difficulties"}</Typography>
 							</Grid>
 							<Grid item xs={5}>
 								<FormControl component="Item2" fullWidth="true">
@@ -204,7 +204,7 @@ export default function ConstDelays(props){
 						{/* QUESTION 3 */}
 						<Grid container direction="row" justify="center" alignItems="center" spacing={1}>
 							<Grid item xs={7}>
-								<Typography variant="body2" gutterBottom>3. Owner Document Preparation Delays</Typography>
+								<Typography variant="body2" gutterBottom>3. {user === "Owner" ? "Owner Document Preparation Delays" : "Poor Internal Communication"}</Typography>
 							</Grid>
 							<Grid item xs={5}>
 								<FormControl component="Item3" fullWidth="true">
@@ -227,7 +227,7 @@ export default function ConstDelays(props){
 						{/* QUESTION 4 */}
 						<Grid container direction="row" justify="center" alignItems="center" spacing={1}>
 							<Grid item xs={7}>
-								<Typography variant="body2" gutterBottom>4. Choosing Inefficient Contractor</Typography>
+								<Typography variant="body2" gutterBottom>4. {user === "Owner" ? "Choosing Inefficient Contractor" : "Backlogs/Reworks due to Poor Workmanship"}</Typography>
 							</Grid>
 							<Grid item xs={5}>
 								<FormControl component="Item4" fullWidth="true">
@@ -250,7 +250,7 @@ export default function ConstDelays(props){
 						{/* QUESTION 5 */}
 						<Grid container direction="row" justify="center" alignItems="center" spacing={1}>
 							<Grid item xs={7}>
-								<Typography variant="body2" gutterBottom>5. Insufficient Alloted Construction Schedule</Typography>
+								<Typography variant="body2" gutterBottom>5. {user === "Owner" ? "Insufficient Alloted Construction Schedule" : "Poor/Inadequate Labor"}</Typography>
 							</Grid>
 							<Grid item xs={5}>
 								<FormControl component="Item5" fullWidth="true">
@@ -273,7 +273,7 @@ export default function ConstDelays(props){
 						{/* QUESTION 6 */}
 						<Grid container direction="row" justify="center" alignItems="center" spacing={1}>
 							<Grid item xs={7}>
-								<Typography variant="body2" gutterBottom>6. Poor Information Dissemination</Typography>
+								<Typography variant="body2" gutterBottom>6. {user === "Owner" ? "Poor Information Dissemination" : "Poor Weather Conditions"}</Typography>
 							</Grid>
 							<Grid item xs={5}>
 								<FormControl component="Item6" fullWidth="true">
@@ -296,7 +296,7 @@ export default function ConstDelays(props){
 						{/* QUESTION 7 */}
 						<Grid container direction="row" justify="center" alignItems="center" spacing={1}>
 							<Grid item xs={7}>
-								<Typography variant="body2" gutterBottom>7. Possible Political Situtation</Typography>
+								<Typography variant="body2" gutterBottom>7. {user === "Owner" ? "Possible Political Situtation" :"Deficiency/Delay in Supply of Construction Materials"}</Typography>
 							</Grid>
 							<Grid item xs={5}>
 								<FormControl component="Item7" fullWidth="true">
@@ -319,7 +319,7 @@ export default function ConstDelays(props){
 						{/* QUESTION 8 */}
 						<Grid container direction="row" justify="center" alignItems="center" spacing={1}>
 							<Grid item xs={7}>
-								<Typography variant="body2" gutterBottom>8. Possible Neighbor Problems</Typography>
+								<Typography variant="body2" gutterBottom>8. {user === "Owner" ? "Possible Neighbor Problems" : "Unpredicted Site Conditions"}</Typography>
 							</Grid>
 							<Grid item xs={5}>
 								<FormControl component="Item8" fullWidth="true">
