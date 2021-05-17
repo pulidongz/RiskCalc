@@ -64,7 +64,7 @@ export default function cdos(val1, val2, val3, val4, val5, val6, val7, val8) {
 	// NORMALIZED CONSTRUCTION DELAYS RATING MODEL - OWNER SIDE
 	var K = -1.1976*HN1 - 1.3398*HN2 - 1.8781*HN3 + 1.6952*HN4 + 0.14742*HN5 - 0.55561*HN6 + 0.0050434*HN7 + 1.2913*HN8 - 0.80824;
 	console.log(K);
-	var CDOSn = (Math.exp(K) - Math.exp(-Math.abs(K))) / (Math.exp(K) + Math.exp(-Math.abs(K)));
+	var CDOSn = (Math.exp(K) - Math.exp(-K)) / (Math.exp(K) + Math.exp(-K));
 	// FINAL - CONSTRUCTION DELAY OWNER SIDE
 	var CDOS = 2*(CDOSn+1)+1;
 
