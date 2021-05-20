@@ -8,6 +8,9 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import cdos from "./formulas/cdos";
 import cdcs from "./formulas/cdcs";
+import wdos from "./formulas/wdos";
+import wdcs from "./formulas/wdcs";
+
 
 const useStyles = makeStyles({
 	root:{
@@ -61,7 +64,19 @@ export default function ResultPage(props){
 		
 		useEffect(() => {
 			//setConstdelayos(computeCDOS());
-			setGetResult(cdos(val1, val2, val3, val4, val5, val6, val7, val8).toFixed(6));
+			if(user === "Owner" && criteria === "Construction Delay"){
+				setGetResult(cdos(val1, val2, val3, val4, val5, val6, val7, val8).toFixed(6));
+			}
+			else if(user === "Owner" && criteria === "Workmanship Defects"){
+				setGetResult(wdos(val1, val2, val3, val4, val5, val6, val7, val8).toFixed(6));
+			}
+			else if(user === "Contractor" && criteria === "Construction Delay"){
+				setGetResult(cdcs(val1, val2, val3, val4, val5, val6, val7, val8).toFixed(6));
+			}
+			// user === "Contractor" && criteria === "Workmanship Defects"
+			else {
+				setGetResult(wdcs(val1, val2, val3, val4, val5, val6, val7, val8).toFixed(6));
+			}
 		}, []); 
 
     return(
