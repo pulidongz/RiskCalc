@@ -46,7 +46,7 @@ export default function CriteriaPage(props){
                     <CardMedia
                     className={classes.media}
                     image={cons_delay}
-                    title="Owner/Developer"
+                    title="Construction Delay"
                     />
                     <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
@@ -67,7 +67,7 @@ export default function CriteriaPage(props){
                     <CardMedia
                     className={classes.media}
                     image={workman_defects}
-                    title="Contractor"
+                    title="Workmanship Defects"
                     />
                     <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
