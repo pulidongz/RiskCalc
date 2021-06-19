@@ -6,6 +6,8 @@ import {
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
+import result from "../assets/images/result.png"
+
 import cdos from "./formulas/cdos";
 import cdcs from "./formulas/cdcs";
 import wdos from "./formulas/wdos";
@@ -14,7 +16,7 @@ import wdcs from "./formulas/wdcs";
 
 const useStyles = makeStyles({
 	root:{
-	maxWidth: 600,
+			maxWidth: 750,
 			padding: 20,
 			display: 'flex',
 			margin: 'auto',
@@ -51,6 +53,7 @@ export default function ResultPage(props){
 		val7, setVal7,
 		val8, setVal8, } = props;
 		const [getResult, setGetResult] = useState(null);
+
 		
 		// Construction Delay, Owner Side
 		// <cdos val1={val1} val2={val2} val3={val3} val4={val4} val5={val5} val6={val6} val7={val7} val8={val8} />;
@@ -79,19 +82,39 @@ export default function ResultPage(props){
 			}
 		}, []); 
 
+		const handleResult = (result) => {
+			if(result >= 1 && result <= 2){
+				return (<u>unlikely to happen</u>);
+			}
+			else if(result >= 2 && result <= 3){
+				return (<u>likely to happen</u>);
+			}
+			else if(result >= 3 && result <= 4){
+				return (<u>more likely to happen</u>);
+			}
+			else{
+				return (<u>most definitely will happen</u>);
+			}
+		}
+
     return(
-			<Paper elevation={3} style={{height: 300}}>
+			<Paper elevation={3} style={{height: 400}}>
 				<Grid className={classes.root} container direction="row" justify="center" alignItems="center" spacing={2}>
 					<Grid item xs={12}>
 						<Typography variant="h6" gutterBottom>{user} Side: {criteria}</Typography>
 					</Grid>
+					<Grid item xs={6}>
+						<Paper variant="outlined">
+							<img src={result} />
+						</Paper>
+					</Grid>
 					<Grid container direction="column" justify="flex-start" alignItems="center">
 						<Grid item xs={12}>
-						<Typography variant="h4" gutterBottom>{getResult}</Typography>
+						<Typography variant="h4" gutterBottom>Value: {getResult}</Typography>
 						</Grid>
 						<Grid item xs={12}>
-							<Typography>is the most probable {criteria === "Construction Delay" ? "rate of delay for your project" : "degree of workmanship defects you will encounter in your project."}</Typography>
-					</Grid>
+							<Typography>The probability of encountering {criteria === "Construction Delay" ? "construction delay in your project": "workmanship defects in your project"} is {handleResult(getResult)}.</Typography>
+						</Grid>
 					</Grid>
         </Grid>
 			</Paper>

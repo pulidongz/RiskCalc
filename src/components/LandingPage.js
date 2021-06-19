@@ -32,7 +32,7 @@ function getSteps() {
 
 const useStyles = makeStyles({
     root:{
-        maxWidth: 600,
+        maxWidth: 750,
         paddingTop: 50,
         display: 'flex',
         margin: 'auto',
