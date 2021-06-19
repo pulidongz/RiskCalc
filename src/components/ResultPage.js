@@ -98,7 +98,7 @@ export default function ResultPage(props){
 		}
 
     return(
-			<Paper elevation={3} style={{height: 400}}>
+			<Paper elevation={3} style={{height: 430}}>
 				<Grid className={classes.root} container direction="row" justify="center" alignItems="center" spacing={2}>
 					<Grid item xs={12}>
 						<Typography variant="h6" gutterBottom>{user} Side: {criteria}</Typography>
@@ -113,7 +113,11 @@ export default function ResultPage(props){
 						<Typography variant="h4" gutterBottom>Value: {getResult}</Typography>
 						</Grid>
 						<Grid item xs={12}>
-							<Typography>The probability of encountering {criteria === "Construction Delay" ? "construction delay in your project": "workmanship defects in your project"} is {handleResult(getResult)}.</Typography>
+							<Typography>The probability of encountering {criteria === "Construction Delay" ? "construction delay in your project": "workmanship defects in your project"} is {handleResult(getResult)}.
+							</Typography>
+							<Typography>
+							Please check the Construction Policy Guidelines to identify the weighted impact of each factor.
+							</Typography>
 						</Grid>
 					</Grid>
         </Grid>
