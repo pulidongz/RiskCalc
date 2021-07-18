@@ -183,7 +183,7 @@ export default function LandingPage(props){
 
     return(
         <Grid className={classes.root} container direction="row" justify="center" alignItems="center" spacing={2}>
-					<Typography variant="h5" gutterBottom>Construction Duration and Workmanship Calculator</Typography>
+					<Typography variant="h5" gutterBottom>Construction Delays and Workmanship Defects Calculator</Typography>
 					<Typography variant="subtitle2" gutterBottom>For mass housing developments</Typography>
 				
 					{/* STEPPER COMPONENT */}
