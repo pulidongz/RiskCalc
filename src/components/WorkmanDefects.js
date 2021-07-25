@@ -126,7 +126,7 @@ export default function WorkmanDefects(props){
 		};
 
     return(
-			<Paper elevation={3}>
+		<Paper className={classes.root} elevation={3}>
         <Grid className={classes.root} container direction="row" justify="center" alignItems="center" spacing={2}>
 					<Grid item xs={12}>
             <Typography variant="h6" gutterBottom>
@@ -162,7 +162,7 @@ export default function WorkmanDefects(props){
 								<Typography variant="body2" gutterBottom>1. {user === "Owner" ? "Poor Management/Supervision" : "Complicated Roles of Sub-Contractor"}</Typography>
 							</Grid>
 							<Grid item xs={5}>
-								<FormControl component="Item1" fullWidth="true">
+								<FormControl component="item1" fullWidth={true}>
 									<RadioGroup aria-label="gender" name="item1_radiogroup" style={{display: 'flex', flexDirection: 'row', padding: 0}} value={val1}
 										onChange={(event)=>{
 											setVal1(event.target.value);
@@ -185,7 +185,7 @@ export default function WorkmanDefects(props){
 								<Typography variant="body2" gutterBottom>2. {user === "Owner" ? "Design Specification Problems" : "Laborer’s Lack of Skill/Workmanship"}</Typography>
 							</Grid>
 							<Grid item xs={5}>
-								<FormControl component="Item2" fullWidth="true">
+								<FormControl component="item2" fullWidth={true}>
 									<RadioGroup aria-label="gender" name="item2_radiogroup" style={{display: 'flex', flexDirection: 'row', padding: 0,}} value={val2}
 										onChange={(event)=>{
 											setVal2(event.target.value);
@@ -208,7 +208,7 @@ export default function WorkmanDefects(props){
 								<Typography variant="body2" gutterBottom>3. {user === "Owner" ? "Refusal to Pay for Additional Works" : "Using Unsuitable Construction Equipment"}</Typography>
 							</Grid>
 							<Grid item xs={5}>
-								<FormControl component="Item3" fullWidth="true">
+								<FormControl component="item3" fullWidth={true}>
 									<RadioGroup aria-label="gender" name="item3_radiogroup" style={{display: 'flex', flexDirection: 'row', padding: 0,}} value={val3}
 										onChange={(event)=>{
 											setVal3(event.target.value);
@@ -231,7 +231,7 @@ export default function WorkmanDefects(props){
 								<Typography variant="body2" gutterBottom>4. {user === "Owner" ? "Approval of Alternative Materials" : "Poor Handling and Storage of Materials"}</Typography>
 							</Grid>
 							<Grid item xs={5}>
-								<FormControl component="Item4" fullWidth="true">
+								<FormControl component="item4" fullWidth={true}>
 									<RadioGroup aria-label="gender" name="item4_radiogroup" style={{display: 'flex', flexDirection: 'row', padding: 0,}} value={val4}
 										onChange={(event)=>{
 											setVal4(event.target.value);
@@ -254,7 +254,7 @@ export default function WorkmanDefects(props){
 								<Typography variant="body2" gutterBottom>5. {user === "Owner" ? "Shortening of Work Duration" : "Language/Communication Barrier"}</Typography>
 							</Grid>
 							<Grid item xs={5}>
-								<FormControl component="Item5" fullWidth="true">
+								<FormControl component="item5" fullWidth={true}>
 									<RadioGroup aria-label="gender" name="item5_radiogroup" style={{display: 'flex', flexDirection: 'row', padding: 0,}} value={val5}
 										onChange={(event)=>{
 											setVal5(event.target.value);
@@ -277,7 +277,7 @@ export default function WorkmanDefects(props){
 								<Typography variant="body2" gutterBottom>6. {user === "Owner" ? "Lack of care for Turned Over Units" : "Poor Weather Conditions"}</Typography>
 							</Grid>
 							<Grid item xs={5}>
-								<FormControl component="Item6" fullWidth="true">
+								<FormControl component="item6" fullWidth={true}>
 									<RadioGroup aria-label="gender" name="item6_radiogroup" style={{display: 'flex', flexDirection: 'row', padding: 0,}} value={val6}
 										onChange={(event)=>{
 											setVal6(event.target.value);
@@ -300,7 +300,7 @@ export default function WorkmanDefects(props){
 								<Typography variant="body2" gutterBottom>7. {user === "Owner" ? "Unsupervised Modification of Units" : "Vandalism"}</Typography>
 							</Grid>
 							<Grid item xs={5}>
-								<FormControl component="Item7" fullWidth="true">
+								<FormControl component="item7" fullWidth={true}>
 									<RadioGroup aria-label="gender" name="item7_radiogroup" style={{display: 'flex', flexDirection: 'row', padding: 0,}} value={val7}
 										onChange={(event)=>{
 											setVal7(event.target.value);
@@ -323,7 +323,7 @@ export default function WorkmanDefects(props){
 								<Typography variant="body2" gutterBottom>8. {user === "Owner" ? "Poor Owner/Developer Maintenance" : "Neighboring Construction Activities"}</Typography>
 							</Grid>
 							<Grid item xs={5}>
-								<FormControl component="Item8" fullWidth="true">
+								<FormControl component="item8" fullWidth={true}>
 									<RadioGroup aria-label="gender" name="item8_radiogroup" style={{display: 'flex', flexDirection: 'row', padding: 0,}} value={val8}
 										onChange={(event)=>{
 											setVal8(event.target.value);

@@ -13,7 +13,6 @@ export default function cdos(val1, val2, val3, val4, val5, val6, val7, val8) {
 
 	// NORMALIZED VALUES
 	var OPPDn = 0.5*(tval1-1)-1;
-	console.log("OPPDn", OPPDn);
 	var ODMDn = 0.5*(tval2-1)-1;
 	var ODPDn = 0.5*(tval3-1)-1;
 	var CICn = 0.5*(tval4-1)-1;

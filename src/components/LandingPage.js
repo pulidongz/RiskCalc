@@ -7,10 +7,6 @@ import {
 		StepLabel,
 		Typography,
 		Button,
-		Card,
-		CardActionArea,
-		CardMedia,
-		CardContent,
 } from "@material-ui/core";
 
 import ProfessionPage from './ProfessionPage';
@@ -32,24 +28,27 @@ function getSteps() {
 
 const useStyles = makeStyles({
     root:{
-        maxWidth: 750,
+        maxWidth: 1400,
         paddingTop: 50,
         display: 'flex',
         margin: 'auto',
         flexWrap: 'wrap',
     },
-		stepper: {
-			paddingBottom: 10
-		},
-		card: {
-      display: 'flex',
-	    margin: 'auto',
-    	flexWrap: 'wrap',
-			padding: 10,
+	stepper: {
+		paddingBottom: 10
+	},
+	card: {
+      	display: 'flex',
+		margin: 'auto',
+		flexWrap: 'wrap',
+		padding: 10,
     },
     media: {
-      height: 200,
+      	height: 200,
     },
+	backButton: {
+		textAlign: 'right'
+	}
   });
 
 export default function LandingPage(props){
@@ -77,13 +76,10 @@ export default function LandingPage(props){
 				return <CriteriaPage criteria={criteria} setCriteria={setCriteria} selectCriteriaType={selectCriteriaType} />;
 			case 2:
 				if(criteria === "Construction Delay"){
-					return <ConstDelays user={user} criteria={criteria} val1={val1} val2={val2} val3={val3} val4={val4} val5={val5} val6={val6} val7={val7} val8={val8}
-						setVal1={setVal1} setVal2={setVal2} setVal3={setVal3} setVal4={setVal4} setVal5={setVal5} setVal6={setVal6} setVal7={setVal7} setVal8={setVal8}
-						handleNextMainContent={handleNext}
+					return <ConstDelays user={user} criteria={criteria} val1={val1} val2={val2} val3={val3} val4={val4} val5={val5} val6={val6} val7={val7} val8={val8} setVal1={setVal1} setVal2={setVal2} setVal3={setVal3} setVal4={setVal4} setVal5={setVal5} setVal6={setVal6} setVal7={setVal7} setVal8={setVal8} handleNextMainContent={handleNext}
 					/>;
 				}else{
-					return <WorkmanDefects user={user} criteria={criteria} val1={val1} val2={val2} val3={val3} val4={val4} val5={val5} val6={val6} val7={val7} val8={val8}
-						setVal1={setVal1} setVal2={setVal2} setVal3={setVal3} setVal4={setVal4} setVal5={setVal5} setVal6={setVal6} setVal7={setVal7} setVal8={setVal8} 
+					return <WorkmanDefects user={user} criteria={criteria} val1={val1} val2={val2} val3={val3} val4={val4} val5={val5} val6={val6} val7={val7} val8={val8} setVal1={setVal1} setVal2={setVal2} setVal3={setVal3} setVal4={setVal4} setVal5={setVal5} setVal6={setVal6} setVal7={setVal7} setVal8={setVal8} 
 					/>;
 				}
 			case 3:
@@ -97,52 +93,58 @@ export default function LandingPage(props){
 				return null;
 			case 1:
 				return (
-					<Grid container direction="row" justify="space-between" alignItems="flex-start" style={{marginLeft: 40}}>
-						<Grid item xs={3}>
-							<Button variant="contained" onClick={handleBack} className={classes.backButton}>
-								Back
-							</Button>
+					<Grid container direction="row" justify="center" alignItems="center">
+						<Grid item xs={6}>
+							<Grid container direction="row" justify="center" alignItems="center">
+								<Button variant="contained" onClick={handleBack} className={classes.backButton}>
+									Back
+								</Button>
+							</Grid>
 						</Grid>
 						<Grid item xs={6}>
-						</Grid>
-						<Grid item xs={3}>
-							<Button variant="contained" disabled={true} color="primary" onClick={handleNext}>
-								Next
-							</Button>
+							<Grid container direction="row" justify="center" alignItems="center">
+								<Button variant="contained" disabled={true} color="primary" onClick={handleNext}>
+									Next
+								</Button>
+							</Grid>
 						</Grid>
 					</Grid>
 				);
 			case 2:
 				return (
-					<Grid container direction="row" justify="space-between" alignItems="flex-start" style={{marginLeft: 40}}>
-						<Grid item xs={3}>
-							<Button variant="contained" onClick={handleBack} className={classes.backButton}>
-								Back
-							</Button>
+					<Grid container direction="row" justify="center" alignItems="center">
+						<Grid item xs={6}>
+							<Grid container direction="row" justify="center" alignItems="center">
+								<Button variant="contained" onClick={handleBack} className={classes.backButton}>
+									Back
+								</Button>
+							</Grid>
 						</Grid>
 						<Grid item xs={6}>
-						</Grid>
-						<Grid item xs={3}>
-							<Button variant="contained" disabled={[val1, val2, val3, val4, val5, val6, val7, val8].includes(0)} color="primary" onClick={handleNext}>
-								Next
-							</Button>
+							<Grid container direction="row" justify="center" alignItems="center">
+								<Button variant="contained" disabled={[val1, val2, val3, val4, val5, val6, val7, val8].includes(0)} color="primary" onClick={handleNext}>
+									Next
+								</Button>
+							</Grid>	
 						</Grid>
 					</Grid>
 				);
 			case 3:
 				return (
-					<Grid container direction="row" justify="space-evenly" alignItems="flex-start" style={{marginLeft: 20}}>
-						<Grid item xs={3}>
-							<Button variant="contained" onClick={handleBack} className={classes.backButton}>
-								Back
-							</Button>
-						</Grid>
+					<Grid container direction="row" justify="center" alignItems="center">
 						<Grid item xs={6}>
-						</Grid>
-						<Grid item xs={3}>
-							<Button variant="contained" color="primary" onClick={handleReset}>
-								Try Again
-							</Button>
+							<Grid container direction="row" justify="center" alignItems="center">
+								<Button variant="contained" disabled={true} onClick={handleBack} className={classes.backButton}>
+									Back
+								</Button>
+							</Grid>	
+						</Grid>		
+						<Grid item xs={6}>
+							<Grid container direction="row" justify="center" alignItems="center">
+								<Button variant="contained" color="primary" onClick={handleReset}>
+									Try Again
+								</Button>
+							</Grid>
 						</Grid>
 					</Grid>
 				);
@@ -182,31 +184,32 @@ export default function LandingPage(props){
 	};
 
     return(
-        <Grid className={classes.root} container direction="row" justify="center" alignItems="center" spacing={2}>
+      <Grid className={classes.root} container direction="row" justify="center" alignItems="center" spacing={2}>
+				<Grid item xs={12} style={{textAlign: 'center'}}>
 					<Typography variant="h5" gutterBottom>Construction Delays and Workmanship Defects Calculator</Typography>
 					<Typography variant="subtitle2" gutterBottom>For mass housing developments</Typography>
-				
-					{/* STEPPER COMPONENT */}
-					<Grid item xs={12}>
-						<Stepper className={classes.stepper} activeStep={activeStep} alternativeLabel >
-							{steps.map((label, index) => (
-								<Step key={label}>
-									<StepLabel>{label}</StepLabel>
-								</Step>
-							))}
-						</Stepper>
-					</Grid>
+				</Grid>
+			
+				{/* STEPPER COMPONENT */}
+				<Grid item xs={12}>
+					<Stepper className={classes.stepper} activeStep={activeStep} alternativeLabel >
+						{steps.map((label, index) => (
+							<Step key={label}>
+								<StepLabel>{label}</StepLabel>
+							</Step>
+						))}
+					</Stepper>
+				</Grid>
 
-					{/* BLOCK CONTENT */}
-					<Grid item xs={12}>
-						{getStepContent(activeStep)}
-					</Grid>
-					
-
-					{/* BUTTON GROUP */}
-					<Grid item xs={12}>
-						{getButtonContent(activeStep)}
-					</Grid>
-        </Grid>
+				{/* BLOCK CONTENT */}
+				<Grid item xs={12}>
+					{getStepContent(activeStep)}
+				</Grid>
+			
+				{/* BUTTON GROUP */}
+				<Grid item xs={12}>
+					{getButtonContent(activeStep)}
+				</Grid>
+      </Grid>
     );
 }

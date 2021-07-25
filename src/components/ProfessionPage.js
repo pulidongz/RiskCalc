@@ -11,8 +11,6 @@ import {
 import owner from "../assets/images/owner.jpg"
 import contractor from "../assets/images/contractor.jpg"
 
-// import { useCookies } from "react-cookie";
-
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({

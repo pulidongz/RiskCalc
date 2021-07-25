@@ -11,14 +11,14 @@ export default function cdcs(val1, val2, val3, val4, val5, val6, val7, val8) {
 	var tval8 = parseInt(val8);
 
     // NORMALIZED VALUES
-    var IPPSn = 0.5*(val1-1)-1
-    var FDn = 0.5*(val2-1)-1
-    var PICn = 0.5*(val3-1)-1
-    var BRPWn = 0.5*(val4-1)-1
-    var PILn = 0.5*(val5-1)-1
-    var PWCn = 0.5*(val6-1)-1
-    var DDSCMn = 0.5*(val7-1)-1
-    var USCn = 0.5*(val8-1)-1
+    var IPPSn = 0.5*(tval1-1)-1
+    var FDn = 0.5*(tval2-1)-1
+    var PICn = 0.5*(tval3-1)-1
+    var BRPWn = 0.5*(tval4-1)-1
+    var PILn = 0.5*(tval5-1)-1
+    var PWCn = 0.5*(tval6-1)-1
+    var DDSCMn = 0.5*(tval7-1)-1
+    var USCn = 0.5*(tval8-1)-1
 
     // GREEK VALUES - CONSTRUCTION DELAY
     var cd_a = 2.1628*IPPSn - 0.42624*FDn - 1.9894*PICn + 1.0021*BRPWn - 0.18223*PILn + 0.34223*PWCn + 1.6394*DDSCMn + 1.6108*USCn - 2.2042

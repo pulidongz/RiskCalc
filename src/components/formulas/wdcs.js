@@ -11,14 +11,14 @@ export default function wdcs(val1, val2, val3, val4, val5, val6, val7, val8) {
 	var tval8 = parseInt(val8);
 
     // NORMALIZED VALUES
-    var CRSCn = 0.5*(val1-1)-1
-    var LLSWn = 0.5*(val2-1)-1
-    var UCEn = 0.5*(val3-1)-1
-    var PHSMn = 0.5*(val4-1)-1
-    var LCBn = 0.5*(val5-1)-1
-    var PWCn = 0.5*(val6-1)-1
-    var Vn = 0.5*(val7-1)-1
-    var NCAn = 0.5*(val8-1)-1
+    var CRSCn = 0.5*(tval1-1)-1
+    var LLSWn = 0.5*(tval2-1)-1
+    var UCEn = 0.5*(tval3-1)-1
+    var PHSMn = 0.5*(tval4-1)-1
+    var LCBn = 0.5*(tval5-1)-1
+    var PWCn = 0.5*(tval6-1)-1
+    var Vn = 0.5*(tval7-1)-1
+    var NCAn = 0.5*(tval8-1)-1
 
     // GREEK VALUES - WORKMANSHIP DEFECTS
     var cd_a = -(0.0078971*CRSCn)+(0.67225*LLSWn)-(0.76731*UCEn)-(0.68126*PHSMn)-(0.26849*LCBn)-(0.65753*PWCn)+(0.60504*Vn)+(0.9133*NCAn)-1.91

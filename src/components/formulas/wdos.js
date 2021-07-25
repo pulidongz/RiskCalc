@@ -11,14 +11,14 @@ export default function wdos(val1, val2, val3, val4, val5, val6, val7, val8) {
 	var tval8 = parseInt(val8);
 
     // NORMALIZED VALUES
-    var PPMSn = 0.5*(val1-1)-1
-    var DSPn = 0.5*(val2-1)-1
-    var ORPAWn = 0.5*(val3-1)-1
-    var OAAMn = 0.5*(val4-1)-1
-    var SICDn = 0.5*(val5-1)-1
-    var TULCUn = 0.5*(val6-1)-1
-    var TCUMUn = 0.5*(val7-1)-1
-    var PDPMMn = 0.5*(val8-1)-1
+    var PPMSn = 0.5*(tval1-1)-1
+    var DSPn = 0.5*(tval2-1)-1
+    var ORPAWn = 0.5*(tval3-1)-1
+    var OAAMn = 0.5*(tval4-1)-1
+    var SICDn = 0.5*(tval5-1)-1
+    var TULCUn = 0.5*(tval6-1)-1
+    var TCUMUn = 0.5*(tval7-1)-1
+    var PDPMMn = 0.5*(tval8-1)-1
 
     // GREEK VALUES - CONSTRUCTION DELAY
     var cd_a = -(0.15603*PPMSn)+(0.64301*DSPn)+(1.5799*ORPAWn)+(0.048474*OAAMn)-(1.0547*SICDn)+(0.027591*TULCUn)+(0.72992*TCUMUn)-(1.2281*PDPMMn)-1.6007
