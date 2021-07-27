@@ -29,6 +29,7 @@ import rifa_cdos from "./formulas/rifa_cdos";
 import rifa_cdcs from "./formulas/rifa_cdcs";
 import rifa_wdos from "./formulas/rifa_wdos";
 import rifa_wdcs from "./formulas/rifa_wdcs";
+import { Fragment } from "react";
 
 const useStyles = makeStyles({
 	root:{
@@ -52,7 +53,7 @@ const useStyles = makeStyles({
 	},
 	media: {
 		height: 400,
-		width: '100%',
+		backgroundSize: 'contain'
 	},
 	table: {
     minWidth: 190,
@@ -145,30 +146,64 @@ export default function ResultPage(props){
 		const handleImpactValue = (result) => {
 			if(result >= 0 && result <= 2){
 				if(criteria === "Workmanship Defects"){
-					return (<b>0-25% Defects</b>);
+					return (
+						<Fragment>
+							<Typography variant="body2" paragraph><b>0-25% Defects</b> from the scope of works.</Typography>
+						</Fragment>
+					
+					);
 				} else {
-					return (<b>0-25% Delay</b>);
+					return (
+						<Fragment>
+							<Typography variant="body2" paragraph><b>0-25% Delay</b> from the original schedule.</Typography>
+						</Fragment>
+					);
 				}
 			}
 			else if(result >= 2 && result <= 3){
 				if(criteria === "Workmanship Defects"){
-					return (<b>25-50% Defects</b>);
+					return (
+						<Fragment>
+							<Typography variant="body2" paragraph><b>25-50% Defects</b> from the scope of works.</Typography>
+						</Fragment>
+					);
 				} else {
-					return (<b>25-50% Delay</b>);
+					return (
+						<Fragment>
+							<Typography variant="body2" paragraph><b>25-50% Delay</b> from the original schedule.</Typography>
+						</Fragment>
+					);
 				}
 			}
 			else if(result >= 3 && result <= 4){
 				if(criteria === "Workmanship Defects"){
-					return (<b>50-75% Defects</b>);
+					return (
+						<Fragment>
+							<Typography variant="body2" paragraph><b>50-75% Defects</b> from the scope of works.</Typography>
+						</Fragment>
+					
+					);
 				} else {
-					return (<b>50-75% Delay</b>);
+					return (
+						<Fragment>
+							<Typography variant="body2" paragraph><b>50-75% Delay</b> from the original schedule.</Typography>
+						</Fragment>
+					);
 				}
 			}
 			else{
 				if(criteria === "Workmanship Defects"){
-					return (<b>75-100% Defects</b>);
+					return (
+						<Fragment>
+							<Typography variant="body2" paragraph><b>75-100% Defects</b> from the scope of works.</Typography>
+						</Fragment>
+					);
 				} else {
-					return (<b>75-100% Delay</b>);
+					return (
+						<Fragment>
+							<Typography variant="body2" paragraph><b>75-100% Delay</b> from the original schedule.</Typography>
+						</Fragment>
+					);
 				}
 			}
 		}
@@ -180,7 +215,7 @@ export default function ResultPage(props){
 						<Typography variant="h6" gutterBottom style={{fontWeight: 600}}>{user.toUpperCase()} SIDE: {criteria.toUpperCase()}</Typography>
 					</Grid>
 					<Grid container direction="row" justify="center" alignItems="flex-start" spacing={1}>
-						<Grid item xs={6}>
+						<Grid item xs={12} sm={12} lg={6}>
 							<Paper variant="outlined">
 								<CardMedia
 									className={classes.media}
@@ -189,7 +224,7 @@ export default function ResultPage(props){
 								/>
 							</Paper>
 						</Grid>
-						<Grid item xs={6}>
+						<Grid item xs={12} sm={12} lg={6}>
 							{/* IMPACT AND PROBABILITY VALUES */}
 							<Grid container direction="row" justify="center" alignItems="center" spacing={1}>
 								<Grid item xs={6}>
@@ -260,7 +295,7 @@ export default function ResultPage(props){
 							<Grid container direction="row" justify="center" alignItems="flex-start" spacing={1}>
 								<Grid item xs={6}>
 									<Typography variant="body2" paragraph>
-										The project will experience approximately {handleImpactValue(impactValue)} from the scope of works. This result is influenced by the artifical neural network model for {criteria} in housing developments.
+										The project will experience approximately {handleImpactValue(impactValue)} This result is influenced by the artifical neural network model for {criteria} in housing developments.
 									</Typography>
 								</Grid>
 								<Grid item xs={6}>
