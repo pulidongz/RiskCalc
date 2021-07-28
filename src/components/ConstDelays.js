@@ -132,7 +132,7 @@ export default function ConstDelays(props){
 							{user} Side: {criteria}
             </Typography>
             <Typography variant="body2" gutterBottom>
-                Select probability of the following cases (<strong>1</strong> being the <u>least</u> probable):
+                Select probability of the following factors (<strong>1</strong> being the <u>least</u> probable to occur in your project):
             </Typography>
             </Grid>
 						<Divider variant="middle" />

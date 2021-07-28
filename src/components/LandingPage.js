@@ -186,8 +186,9 @@ export default function LandingPage(props){
     return(
       <Grid className={classes.root} container direction="row" justify="center" alignItems="center" spacing={2}>
 				<Grid item xs={12} style={{textAlign: 'center'}}>
-					<Typography variant="h5" gutterBottom>Construction Delays and Workmanship Defects Calculator</Typography>
-					<Typography variant="subtitle2" gutterBottom>For mass housing developments</Typography>
+					<Typography variant="h5" gutterBottom>CONSTRUCTION DELAYS AND WORKMANSHIP DEFECTS IMPACT AND PROBABILITY CALCULATOR</Typography>
+					<Typography variant="body1" gutterBottom>For mass housing developments</Typography>
+					<Typography variant="caption" gutterBottom>(Use desktop browser for a better experience)</Typography>
 				</Grid>
 			
 				{/* STEPPER COMPONENT */}
