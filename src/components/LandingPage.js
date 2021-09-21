@@ -188,6 +188,7 @@ export default function LandingPage(props){
 				<Grid item xs={12} style={{textAlign: 'center'}}>
 					<Typography variant="h5" gutterBottom>CONSTRUCTION DELAYS AND WORKMANSHIP DEFECTS IMPACT AND PROBABILITY CALCULATOR</Typography>
 					<Typography variant="body1" gutterBottom>For mass housing developments</Typography>
+					<Typography variant="h6" gutterBottom>To view the Supplementary Construction Guidelines, click <a href="https://docs.google.com/document/d/1op7l2_3-OP8-dr85IZ3D_r_F0d_cb5ytei3s1UmqhGE/edit" target="_blank">HERE</a></Typography>
 					<Typography variant="caption" gutterBottom>(Use desktop browser for a better experience)</Typography>
 				</Grid>
 			

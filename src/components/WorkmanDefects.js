@@ -156,6 +156,16 @@ export default function WorkmanDefects(props){
 							</Grid>
 						</Grid>
 
+						<Grid container direction="row" justify="space-between" alignItems="flex-start">
+							<Grid item xs={6}></Grid>
+							<Grid item xs={3}>
+								<Typography variant="body2" gutterBottom>(least probable)</Typography>
+							</Grid>
+							<Grid item xs={3}>
+								<Typography variant="body2" gutterBottom style={{textAlign: 'right'}}>(most probable)</Typography>
+							</Grid>
+						</Grid>
+
 						{/* QUESTION 1 */}
 						<Grid container direction="row" justify="center" alignItems="center" spacing={1}>
 							<Grid item xs={7}>
